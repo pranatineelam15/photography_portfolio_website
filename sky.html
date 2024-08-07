@@ -1,0 +1,200 @@
+<html>
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
+        <title>Sky</title>
+    </head>
+    <link rel="stylesheet" href="all.css">
+    <style>
+        body {
+            transition: background-color 0.3s ease;
+        }
+        .imgbox:hover ~ body {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        .expanded-image {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            visibility: hidden;
+            transition: visibility 0.1s ease;
+        }
+        .imgbox:hover .expanded-image {
+            visibility: visible;
+        }
+        .blur-effect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(5px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 9998;
+            pointer-events: none;
+        }
+        .imgbox:hover .blur-effect {
+            opacity: 1;
+        }
+    </style>
+    <body>
+        <div class="topnav">
+            <div class="tit">
+                <a href="index.html">Roam&Click</a>
+            </div>
+            <a href="aboutme.html">About Me</a>
+            <div class="drop">
+                <button class="dropbtn">Clicks
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="drop-content">
+                    <a href="clicks.html">All Clicks</a>
+                    <a href="beach.html">Beach</a>
+                    <a href="moon.html">Moon</a>
+                    <a href="sky.html">Sky</a>
+                    <a href="flowers.html">Flowers</a>
+                </div>
+            </div>
+            <div class="drop">
+                <button class="dropbtn">Destinations
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="drop-content">
+                    <a href="destinations.html">All Destinations</a>
+                    <a href="vizag.html">Vizag</a>
+                    <a href="siamreap.html">Siem Reap</a>
+                    <a href="hanoi.html">Hanoi</a>
+                </div>
+            </div>
+            <a href="index.html">Home</a>
+        </div>
+        <div class="image">
+            <img src="Photos\Clicks\sky\sky3.jpg" width=100% height=100%>
+            <div class="centered" >Sky</div>
+        </div>
+        <div class="contact">
+            <p>Morning</p>
+        </div>
+        <div class="topdimg">
+            <div class="imgbox">
+                <div class="expanded-image">
+                    <img class="homedes" src="Photos\Clicks\sky\sky1.jpg">
+                  </div>
+                  <div class="blur-effect"></div>
+                <img class="homedes" src="Photos\Clicks\sky\sky1.jpg">
+            </div>
+            <div class="imgbox">
+                <div class="expanded-image">
+                    <img class="homedes" src="Photos\Clicks\sky\sky2.jpg">
+                  </div>
+                  <div class="blur-effect"></div>
+                <img class="homedes" src="Photos\Clicks\sky\sky2.jpg">
+            </div>
+            <div class="imgbox">
+                <div class="expanded-image">
+                    <img class="homedes" src="Photos\Clicks\sky\sky4.jpg">
+                  </div>
+                  <div class="blur-effect"></div>
+                <img class="homedes" src="Photos\Clicks\sky\sky4.jpg">
+            </div>
+            <div class="imgbox">
+                <div class="expanded-image">
+                    <img class="homedes" src="Photos\Clicks\sky\sky6.jpg">
+                  </div>
+                  <div class="blur-effect"></div>
+                <img class="homedes" src="Photos\Clicks\sky\sky6.jpg">
+            </div>
+        </div>
+        <div class="contact">
+            <p>Evening</p>
+        </div>
+        <div class="topdimg">
+            <div class="imgbox">
+                <div class="expanded-image">
+                    <img class="homedes" src="Photos\Clicks\sky\set1.jpg">
+                  </div>
+                  <div class="blur-effect"></div>
+                <img class="homedes" src="Photos\Clicks\sky\set1.jpg">
+            </div>
+            <div class="imgbox">
+                <div class="expanded-image">
+                    <img class="homedes" src="Photos\Clicks\sky\set2.jpg">
+                  </div>
+                  <div class="blur-effect"></div>
+                <img class="homedes" src="Photos\Clicks\sky\set2.jpg">
+            </div>
+            <div class="imgbox">
+                <div class="expanded-image">
+                    <img class="homedes" src="Photos\Clicks\sky\set3.jpg">
+                  </div>
+                  <div class="blur-effect"></div>
+                <img class="homedes" src="Photos\Clicks\sky\set3.jpg">
+            </div>
+            <div class="imgbox">
+                <div class="expanded-image">
+                    <img class="homedes" src="Photos\Clicks\sky\rise1.jpg">
+                  </div>
+                  <div class="blur-effect"></div>
+                <img class="homedes" src="Photos\Clicks\sky\rise1.jpg">
+            </div>
+        </div>
+        </div>
+        <div class="topdes">
+        </div>
+        <footer>
+            <p>Capturing moments, creating memories, and sharing stories through my lens. Thank you for exploring my world of photography!!</p>
+            <p>- Pranati Neelam</p>
+        </footer>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+    const enlargeImages = document.querySelectorAll('.hover-enlarge img');
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+    enlargeImages.forEach(img => {
+        let hoverImg = document.createElement('img');
+        hoverImg.src = img.src;
+        hoverImg.style.position = 'fixed';
+        hoverImg.style.top = '50%';
+        hoverImg.style.left = '50%';
+        hoverImg.style.transform = 'translate(-50%, -50%)';
+        hoverImg.style.width = '0';
+        hoverImg.style.height = '0';
+        hoverImg.style.zIndex = '9999';
+        hoverImg.style.transition = 'width 0.3s, height 0.3s, opacity 0.3s';
+        document.body.appendChild(hoverImg);
+        img.addEventListener('mouseover', function() {
+            document.body.style.overflow = 'hidden';
+            let rect = img.getBoundingClientRect();
+            hoverImg.style.width = screenWidth * 0.5 + 'px';
+            hoverImg.style.height = screenHeight * 0.5 + 'px';
+            hoverImg.style.top = rect.top + (screenHeight - rect.height) / 2 + 'px';
+            hoverImg.style.left = rect.left + (screenWidth - rect.width) / 2 + 'px';
+            hoverImg.style.opacity = 1;
+        });
+        img.addEventListener('mouseout', function() {
+            document.body.style.overflow = 'auto';
+            hoverImg.style.width = '0';
+            hoverImg.style.height = '0';
+            hoverImg.style.opacity = 0;
+        });
+    });
+    const blurEffect = document.createElement('div');
+    blurEffect.className = 'blur-effect';
+    document.body.appendChild(blurEffect);
+    enlargeImages.forEach(img => {
+        img.addEventListener('mouseover', function() {
+            blurEffect.style.opacity = 1;
+        });
+        img.addEventListener('mouseout', function() {
+            blurEffect.style.opacity = 0;
+        });
+    });
+});
+        </script>
+    </body>
+</html>
